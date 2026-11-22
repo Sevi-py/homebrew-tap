@@ -17,11 +17,11 @@ cask "hangtime" do
   app "Hangtime.app"
 
   # Make placed widgets load the new extension after an install or `brew upgrade`.
-  postflight do
-    system_command "/usr/bin/pluginkit",
-                   args:         ["-a", "#{appdir}/Hangtime.app/Contents/PlugIns/HangtimeWidgets.appex"],
-                   must_succeed: false
-    system_command "/usr/bin/killall", args: ["chronod"], must_succeed: false
+  postflight_steps do
+    run "/usr/bin/pluginkit",
+        args:         ["-a", "{{appdir}}/Hangtime.app/Contents/PlugIns/HangtimeWidgets.appex"],
+        must_succeed: false
+    run "/usr/bin/killall", args: ["chronod"], must_succeed: false
   end
 
   # No `uninstall quit:`/`login_item:` on purpose: `brew upgrade` runs them, which would quit Hangtime while it
