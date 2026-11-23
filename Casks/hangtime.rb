@@ -1,6 +1,6 @@
 cask "hangtime" do
-  version "1.0.1"
-  sha256 "d66e89d3f985424a43a4479bd5d029218c98385ebb5db3fb7da992eb0ac14ce1"
+  version "1.0.2"
+  sha256 "455212882c6c5312f1249bcf806a15507d43be5e99a3dce3da2b2504c4e7da35"
 
   url "https://github.com/Sevi-py/hangtime/releases/download/v#{version}/Hangtime-#{version}.zip"
   name "Hangtime"
